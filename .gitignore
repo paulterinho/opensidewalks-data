@@ -5,3 +5,5 @@ venv
 
 merged/*
 !merged/.gitkeep
+
+.DS_Store

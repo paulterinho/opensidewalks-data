@@ -17,7 +17,7 @@ rule all:
 
 rule fetch_osm:
     input:
-        HTTP.remote("http://download.geofabrik.de/north-america/us/washington-latest.osm.pbf", keep_local=True)
+        HTTP.remote("https://download.geofabrik.de/north-america/canada/alberta-latest.osm.pbf", keep_local=True)
     output:
         "data_sources/extract.pbf"
     run:
@@ -26,8 +26,12 @@ rule fetch_osm:
 
 rule fetch_dem:
     input:
-        HTTP.remote("https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/13/TIFF/current/n49w123/USGS_13_n49w123.tif", keep_local=True)
+        HTTP.remote("https://github.com/paulterinho/opensidewalks-data/raw/main/data-canada/dem_extract_calgary.zip", keep_local=True)
     output:
         "data_sources/dem.tif"
     run:
         shell("mv {input} {output}")
+        # shell("unzip {input}")
+        #  shell("mv dataset/DEM.tif {output}")
+        # shell("rm -rf dataset")
+        
