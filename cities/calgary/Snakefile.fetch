@@ -26,12 +26,9 @@ rule fetch_osm:
 
 rule fetch_dem:
     input:
-        HTTP.remote("https://github.com/paulterinho/opensidewalks-data/raw/main/data-canada/dem_extract_calgary.zip", keep_local=True)
+        HTTP.remote("https://github.com/paulterinho/opensidewalks-data/raw/main/data-canada/calgary/dem.tif", keep_local=True)
     output:
         "data_sources/dem.tif"
     run:
         shell("mv {input} {output}")
-        # shell("unzip {input}")
-        #  shell("mv dataset/DEM.tif {output}")
-        # shell("rm -rf dataset")
         
