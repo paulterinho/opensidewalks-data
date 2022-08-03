@@ -1,5 +1,7 @@
 # opensidewalks-data
 
+(Forked) Extending the opensidewalks data project to also include instructions for exporting it to a Postgis Database. See Appendix for more information.
+
 Build workflows for OpenSidewalks data releases. Workflows generate OpenSidewalks
 Schema reference implementations for multiple cities.
 
